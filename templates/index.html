@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Unit Converter</h2>
+        <form method="POST">
+            <input type="number" name="value" placeholder="Enter value" required>
+            <select name="conversion_type">
+                <option value="cm_to_in">Centimeters to Inches</option>
+                <option value="in_to_cm">Inches to Centimeters</option>
+                <option value="kg_to_lb">Kilograms to Pounds</option>
+                <option value="lb_to_kg">Pounds to Kilograms</option>
+                <option value="c_to_f">Celsius to Fahrenheit</option>
+                <option value="f_to_c">Fahrenheit to Celsius</option>
+            </select>
+            <button type="submit">Convert</button>
+        </form>
+        {% if result is not none %}
+        <h3>Result: {{ result }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
